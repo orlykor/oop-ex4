@@ -1,0 +1,66 @@
+orlykor12
+203595541
+orly koren
+
+=============================
+=      File description     =
+=============================
+
+AvlTree.java - implements the avl tree- the binary sorted tree with its limitations.
+AvlNode.java - implements the nodes of the tree
+README - this file
+QUESTIONS - the given questions for this excersie.
+
+
+=============================
+=          Design           =
+=============================
+
+i used another class to help me create the nodes for the tree.
+I didn't use any special design, just in the iterator  i used an inner class to implement it.
+
+
+
+=============================
+=  Implementation details   =
+=============================
+
+(1)
+AvlNode- I created this class inorder to creates the nodes for the avl tree. with them I initialized the tree
+with the nodes data(the given data) and also the parent and childs nodes.
+
+iterator class- i did an inner class to the iterator so that way we can call the iterator without calling the
+inner class and it works that way. instead of creating a whole new class. this class makes the tree be 
+iterable. 
+
+(2)
+add()- 
+this method uses another method that inserts the nodes to the tree. it checks where is the right position to
+insert the node accordint to the avl "rules" and then check whether an inturption accord or not. if it did 
+then it calls the other methods that i created. each of them- the "rotations" methods deals with another 
+problem that can happen in the tree. 
+
+delete()-
+
+this method needs to check a few things-
+first, that the given node is not null
+second, if it has no childs thats easy, we just delete it.
+a note- after we delete a node we check all the time to see if the balanced has chnged and we need to correct
+the tree, if it has, then we call the checkBalance and it balances the tree.
+third, if the node as two childs- if it has, we look for the successor. we switch between their data and
+then delete the node of the successor.
+
+the shared methods are the checkBalance, that needs to be used in both of them inorder to balance the tree.
+
+(3)
+the nodes for that are- 
+in the insertion order-
+
+6,3,10,2,5,8,12,1,7,13,14.
+
+the way i created it was that i put numbers between my max number and min numbers until I got an avl tree
+with no changes while i add the nodes.
+=============================
+=    Answers to questions   =
+=============================
+
